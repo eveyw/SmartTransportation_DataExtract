@@ -1,0 +1,161 @@
+csgps = unique(CSgps, 'rows','stable');
+csgyro = unique(CSgyro, 'rows','stable');
+csacce = unique(CSacce, 'rows','stable');
+csmotion = unique(CSmotion, 'rows','stable');
+
+dcloutwsingps = unique(DCLOUTWSINgps, 'rows','stable');
+
+lrsgps = unique(LRSgps, 'rows','stable');
+
+oakgps = unique(OAKgps, 'rows','stable');
+oakacce = unique(OAKacce, 'rows','stable');
+oakgyro = unique(OAKgyro, 'rows','stable');
+oakmotion = unique(OAKmotion, 'rows','stable');
+
+rrtgps = unique(RRTSMgps, 'rows','stable');
+
+upgps = unique(UPgps, 'rows','stable');
+
+wsoutdclingps = unique(WSOUTDCLINgps, 'rows','stable');
+wsoutdclinacce = unique(WSOUTDCLINacce, 'rows','stable');
+wsoutdclinmotion = unique(WSOUTDCLINmotion, 'rows','stable');
+wsoutdclingyro = unique(WSOUTDCLINgyro, 'rows','stable');
+plot(wsoutdclingps(2:2655,3),wsoutdclingps(2:2655,2),'.r','MarkerSize',20)
+
+dcloutwsin1gps = unique(DCLOUTWSIN1gps, 'rows','stable');
+dcloutwsin1acce = unique(DCLOUTWSIN1acce, 'rows','stable');
+dcloutwsin1gyro = unique(DCLOUTWSIN1gyro, 'rows','stable');
+dcloutwsin1motion = unique(DCLOUTWSIN1motion, 'rows','stable');
+dcloutwsin1magne = unique(DCLOUTWSIN1magne, 'rows','stable');
+
+wsoutdclin3gps = unique(WSOUTDCLIN3gps, 'rows','stable');
+wsoutdclin3acce = unique(WSOUTDCLIN3acce, 'rows','stable');
+wsoutdclin3motion = unique(WSOUTDCLIN3motion, 'rows','stable');
+wsoutdclin3gyro = unique(WSOUTDCLIN3gyro, 'rows','stable');
+
+itcgps = unique(ITCCS1gps, 'rows','stable');
+
+csgps = unique(CSgps, 'rows','stable');
+csacce = unique(CSacce, 'rows','stable');
+csgyro = unique(CSgyro, 'rows','stable');
+csmotion = unique(CSmotion, 'rows','stable');
+csmagne = unique(CSmagne, 'rows','stable');
+plot(csgps(2:600,3),csgps(2:600,2),'.r','MarkerSize',20)
+
+udcgps = unique(UDCgps, 'rows','stable');
+udcacce = unique(UDCacce, 'rows','stable');
+udcgyro = unique(UDCgyro, 'rows','stable');
+udcmotion = unique(UDCmotion, 'rows','stable');
+udcmagne = unique(UDCmagne, 'rows','stable');
+plot(udcgps(2:1560,3),udcgps(2:1560,2),'.r','MarkerSize',20)
+
+gasgps = unique(GASgps, 'rows','stable');
+gasacce = unique(GASacce, 'rows','stable');
+gasgyro = unique(GASgyro, 'rows','stable');
+gasmotion = unique(GASmotion, 'rows','stable');
+gasmagne = unique(GASmagne, 'rows','stable');
+
+wsoutdclin1magne = unique(WSOUTDCLIN1magne, 'rows','stable');
+wsoutdclin1gps = unique(WSOUTDCLIN1gps, 'rows','stable');
+wsoutdclin1acce = unique(WSOUTDCLIN1acce, 'rows','stable');
+wsoutdclin1motion = unique(WSOUTDCLIN1motion, 'rows','stable');
+wsoutdclin1gyro = unique(WSOUTDCLIN1gyro, 'rows','stable');
+
+rrt2magne = unique(RRT2magne, 'rows','stable');
+rrt2gps = unique(RRT2gps, 'rows','stable');
+rrt2acce = unique(RRT2acce, 'rows','stable');
+rrt2motion = unique(RRT2motion, 'rows','stable');
+rrt2gyro = unique(RRT2gyro, 'rows','stable');
+
+oak1gps = unique(OAK1gps, 'rows','stable');
+oak1acce = unique(OAK1acce, 'rows','stable');
+oak1gyro = unique(OAK1gyro, 'rows','stable');
+oak1motion = unique(OAK1motion, 'rows','stable');
+oak1magne = unique(OAK1magne, 'rows','stable');
+
+up1gps = unique(UP1gps, 'rows','stable');
+up1acce = unique(UP1acce, 'rows','stable');
+up1gyro = unique(UP1gyro, 'rows','stable');
+up1motion = unique(UP1motion, 'rows','stable');
+up1magne = unique(UP1magne, 'rows','stable');
+
+后者为有问题（数据缺失）的表，对比时间是否一样，保证每个表里的数据都在同区间中：
+dcloutwsinacce = dcloutwsinacce(ismember(dcloutwsinacce(:,1), dcloutwsinmotion(:,1)),:)
+dcloutwsingps = dcloutwsingps(ismember(dcloutwsingps(:,1), dcloutwsinmotion(:,1)),:)
+dcloutwsingyro = dcloutwsingyro(ismember(dcloutwsingyro(:,1), dcloutwsinmotion(:,1)),:)
+dcloutwsinmagne = dcloutwsinmagne(ismember(dcloutwsinmagne(:,1), dcloutwsinmotion(:,1)),:)
+s = rrtacce(ismember(rrtacce(:,1), rrtgps(:,1)))
+ismember(rrtacce(:,1), rrtgps(:,1))
+
+
+csgps = unique(CS4gps, 'rows','stable');
+csacce = unique(CS4acce, 'rows','stable');
+csgyro = unique(CS4gyro, 'rows','stable');
+csmotion = unique(CS4motion, 'rows','stable');
+csmagne = unique(CS4magne, 'rows','stable');
+plot(csgps(2:3755,3),csgps(2:3755,2),'.r','MarkerSize',20)
+
+Wsoutdclin2gps = wsoutdclin2gps(ismember(wsoutdclin2gps(:,1), wsoutdclin2acce(:,1)),:);
+Wsoutdclin2gyro = wsoutdclin2gyro(ismember(wsoutdclin2gyro(:,1), wsoutdclin2acce(:,1)),:);
+Wsoutdclin2magne = wsoutdclin2magne(ismember(wsoutdclin2magne(:,1), wsoutdclin2acce(:,1)),:);
+
+Udc2acce = udc2acce(ismember(udc2acce(:,1), udc2motion(:,1)),:);
+
+cs10gps = unique(CS10gps, 'rows','stable');
+cs10acce = unique(CS10acce, 'rows','stable');
+cs10gyro = unique(CS10gyro, 'rows','stable');
+cs10motion = unique(CS10motion, 'rows','stable');
+cs10magne = unique(CS10magne, 'rows','stable');
+------------------------------------------------------------------------------------------------------------------
+One1gps = unique(one1gps, 'rows','stable');
+One1acce = unique(one1acce, 'rows','stable');
+One1gyro = unique(one1gyro, 'rows','stable');
+One1motion = unique(one1motion, 'rows','stable');
+One1magne = unique(one1magne, 'rows','stable');
+find(One1gps(:,3)==0)
+plot(One1gps(40:27165,3),One1gps(40:27165,2),'.r','MarkerSize',20)
+plot_google_map
+one1gps = One1gps(40:27165,:);
+one1acce = One1acce(40:27165,:);
+one1gyro = One1gyro(40:27165,:);
+one1motion = One1motion(40:27165,:);
+one1magne = One1magne(40:27165,:);
+
+
+
+
+cs11gps = unique(CS11gps, 'rows','stable');
+cs11acce = unique(CS11acce, 'rows','stable');
+cs11gyro = unique(CS11gyro, 'rows','stable');
+cs11motion = unique(CS11motion, 'rows','stable');
+cs11magne = unique(CS11magne, 'rows','stable');
+
+cs12gps = unique(CS12gps, 'rows','stable');
+cs12acce = unique(CS12acce, 'rows','stable');
+cs12gyro = unique(CS12gyro, 'rows','stable');
+cs12motion = unique(CS12motion, 'rows','stable');
+cs12magne = unique(CS12magne, 'rows','stable');
+
+cs13gps = unique(CS13gps, 'rows','stable');
+cs13acce = unique(CS13acce, 'rows','stable');
+cs13gyro = unique(CS13gyro, 'rows','stable');
+cs13motion = unique(CS13motion, 'rows','stable');
+cs13magne = unique(CS13magne, 'rows','stable');
+
+cs14gps = unique(CS14gps, 'rows','stable');
+cs14acce = unique(CS14acce, 'rows','stable');
+cs14gyro = unique(CS14gyro, 'rows','stable');
+cs14motion = unique(CS14motion, 'rows','stable');
+cs14magne = unique(CS14magne, 'rows','stable');
+
+cs15gps = unique(CS15gps, 'rows','stable');
+cs15acce = unique(CS15acce, 'rows','stable');
+cs15gyro = unique(CS15gyro, 'rows','stable');
+cs15motion = unique(CS15motion, 'rows','stable');
+cs15magne = unique(CS15magne, 'rows','stable');
+
+cs16gps = unique(CS16gps, 'rows','stable');
+cs16acce = unique(CS16acce, 'rows','stable');
+cs16gyro = unique(CS16gyro, 'rows','stable');
+cs16motion = unique(CS16motion, 'rows','stable');
+cs16magne = unique(CS16magne, 'rows','stable');

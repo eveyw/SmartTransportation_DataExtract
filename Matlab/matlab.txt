@@ -1,0 +1,49 @@
+Once the variable's value are different from each other, use unique to modify all files:
+
+csgps = unique(CSgps, 'rows','stable');
+csgyro = unique(CSgyro, 'rows','stable');
+csacce = unique(CSacce, 'rows','stable');
+csmotion = unique(CSmotion, 'rows','stable');
+csmagne = unique(CSmagne, 'rows','stable');
+
+dcloutwsingps = unique(DCLOUTWSINgps, 'rows','stable');
+dcloutwsinacce = unique(DCLOUTWSINacce, 'rows','stable');
+dcloutwsingyro = unique(DCLOUTWSINgyro, 'rows','stable');
+dcloutwsinmotion = unique(DCLOUTWSINmotion, 'rows','stable');
+dcloutwsinmagne = unique(DCLOUTWSINmagne, 'rows','stable');
+
+rrtgps = unique(RRTgps, 'rows','stable');
+rrtacce = unique(RRTacce, 'rows','stable');
+rrtgyro = unique(RRTgyro, 'rows','stable');
+rrtmotion = unique(RRTmotion, 'rows','stable');
+rrtmagne = unique(RRTmagne, 'rows','stable');
+
+-----------------------------------------------------------------------------------
+
+use plot to check if the route map is complete:
+
+plot(wsoutdclingps(2:2655,3),wsoutdclingps(2:2655,2),'.r','MarkerSize',20);plot_google_map
+
+plot(CS1gps(2:5251,3),CS1gps(2:5251,2),'.r','MarkerSize',20);plot_google_map
+
+plot(WSOUTDCLINgps(2:2698,3),WSOUTDCLINgps(2:2698,2),'.r','MarkerSize',20);plot_google_map
+
+plot(DCLOUTWSINgps(2:2599,3),DCLOUTWSINgps(2:2599,2),'.r','MarkerSize',20);plot_google_map
+
+plot(RRTgps(2:1964,3),RRTgps(2:1964,2),'.r','MarkerSize',20);plot_google_map
+
+plot(UPgps(2:751,3),UPgps(2:751,2),'.r','MarkerSize',20);plot_google_map
+
+plot(UDCWSINgps(2:2310,3),UDCWSINgps(2:2310,2),'.r','MarkerSize',20);plot_google_map
+
+plot(UDCgps(2:1733,3),UDCgps(2:1733,2),'.r','MarkerSize',20);plot_google_map
+
+-----------------------------------------------------------------------------------
+
+use ismember to modify all the files by decreasing the data size as the same as the
+smallest one (the last variable is the "bad" table)
+
+dcloutwsinacce = dcloutwsinacce(ismember(dcloutwsinacce(:,1), dcloutwsinmotion(:,1)),:)
+
+
+
